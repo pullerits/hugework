@@ -15,13 +15,13 @@ export default function Home() {
       </nav>
 
       {/* Hero Video */}
-      <div className="relative w-full aspect-[16/8] overflow-hidden bg-black/5">
+      <div className="relative w-full aspect-[16/5] overflow-hidden bg-black/5">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         >
           <source src="/output_dither.mp4" type="video/mp4" />
         </video>
