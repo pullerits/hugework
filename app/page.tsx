@@ -2,8 +2,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white text-black font-sans">
       {/* Navigation */}
-      <nav className="flex items-center justify-between px-6 py-4 border-b border-black/5">
-        <span className="text-sm font-semibold tracking-widest uppercase">
+      <nav className="flex items-center justify-between px-4 py-1 border-b border-black/5">
+        <span className="text-lg font-semibold tracking-widest uppercase font-[family-name:var(--font-libre-baskerville)]">
           HUGEWORK
         </span>
         <a
@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       {/* Action Row */}
-      <div className="flex items-center justify-between px-6 py-5 border-b border-black/5">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-black/5">
         <div className="flex items-center gap-3">
           <a
             href="#work"
@@ -52,18 +52,16 @@ export default function Home() {
       </div>
 
       {/* Headline */}
-      <div className="px-6 pt-10 pb-6">
+      <div className="px-4 pt-6 pb-4">
         <h1 className="max-w-2xl text-4xl sm:text-5xl font-medium leading-[1.1] tracking-tight">
-          We Design, Build & Print
+          We Design, Build & Print Everything
           <br />
-          Everything Your Brand
-          <br />
-          Needs To Stand Out
+          Your Brand Needs To Stand Out
         </h1>
       </div>
 
       {/* Service Descriptions */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 pt-4 pb-16 border-t border-black/5">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-4 pt-3 pb-10 border-t border-black/5">
         <div className="pt-6">
           <p className="text-xs leading-relaxed text-black/50">
             From brand identity systems to campaign visuals, we craft designs
