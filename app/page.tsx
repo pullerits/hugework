@@ -23,7 +23,7 @@ export default function Home() {
           playsInline
           className="w-full h-full object-cover object-top"
         >
-          <source src="/output_dither.mp4" type="video/mp4" />
+          <source src="/output_dither.av1.mp4" type="video/mp4" />
         </video>
       </div>
 
