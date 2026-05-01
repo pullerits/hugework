@@ -42,3 +42,75 @@ body {
 .typewriter-cursor {
   animation: typewriter-cursor-blink 1.25s steps(1, end) infinite;
 }
+
+.gravity-letter {
+  display: inline-block;
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+
+.gravity-letter-0 {
+  transform: skewX(-14deg);
+}
+
+.gravity-letter-1 {
+  transform: skewX(-10deg);
+}
+
+.gravity-letter-2 {
+  transform: skewX(-6deg);
+}
+
+.gravity-letter-3 {
+  transform: skewX(0deg);
+}
+
+.gravity-letter-4 {
+  transform: skewX(0deg);
+}
+
+.gravity-letter-5 {
+  transform: skewX(6deg);
+}
+
+.gravity-letter-6 {
+  transform: skewX(10deg);
+}
+
+.gravity-letter-7 {
+  transform: skewX(14deg);
+}
+
+@media (max-width: 640px) {
+  .gravity-letter-0 {
+    transform: skewX(-10deg);
+  }
+
+  .gravity-letter-1 {
+    transform: skewX(-7deg);
+  }
+
+  .gravity-letter-2 {
+    transform: skewX(-4deg);
+  }
+
+  .gravity-letter-3 {
+    transform: skewX(0deg);
+  }
+
+  .gravity-letter-4 {
+    transform: skewX(0deg);
+  }
+
+  .gravity-letter-5 {
+    transform: skewX(4deg);
+  }
+
+  .gravity-letter-6 {
+    transform: skewX(7deg);
+  }
+
+  .gravity-letter-7 {
+    transform: skewX(10deg);
+  }
+}

@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useState, type ReactNode } from "react";
 
 type Stat = {
   illustration: ReactNode;
@@ -30,6 +32,8 @@ const stats: Stat[] = [
 ];
 
 export default function StatsSection() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <section
       className="bg-[#f7f5f0] px-4 py-14 text-[#262626] md:py-20"
@@ -42,37 +46,46 @@ export default function StatsSection() {
       </div>
 
       <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-1.5 sm:grid-cols-2 md:gap-2">
-        {stats.map((s) => (
-          <article
-            key={s.percent}
-            className="group relative flex aspect-square flex-col overflow-hidden rounded-2xl bg-[#0f0f0f] p-2 text-white md:aspect-[5/4]"
-          >
-            <div className="relative flex flex-1 items-center justify-center overflow-hidden rounded-xl bg-[#181818] px-6 pt-10 pb-4">
-              <span
-                aria-hidden="true"
-                className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center text-white/70"
+        {stats.map((s, i) => {
+          const revealed = hovered === i;
+          return (
+            <article
+              key={s.percent}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered((h) => (h === i ? null : h))}
+              className="relative flex aspect-square flex-col overflow-hidden rounded-2xl bg-[#0f0f0f] p-2 text-white md:aspect-[5/4]"
+            >
+              <div className="relative flex flex-1 items-center justify-center overflow-hidden rounded-xl bg-[#181818] px-6 pt-10 pb-4">
+                <span
+                  aria-hidden="true"
+                  className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center text-white/70"
+                >
+                  <span className="hidden max-md:block">
+                    <EyeIcon open={true} />
+                  </span>
+                  <span className="hidden md:block">
+                    <EyeIcon open={revealed} />
+                  </span>
+                </span>
+
+                {s.illustration}
+              </div>
+
+              <div
+                className={`px-6 py-3 text-center transition-opacity duration-500 ease-out max-md:opacity-100 ${
+                  revealed ? "md:opacity-100" : "md:opacity-0"
+                }`}
               >
-                <span className="hidden md:block md:group-hover:hidden">
-                  <EyeIcon open={false} />
-                </span>
-                <span className="block md:hidden md:group-hover:block">
-                  <EyeIcon open={true} />
-                </span>
-              </span>
-
-              {s.illustration}
-            </div>
-
-            <div className="px-6 py-3 text-center opacity-100 transition-opacity duration-500 ease-out md:opacity-0 md:group-hover:opacity-100">
-              <p className="font-[family-name:var(--font-instrument-serif)] text-3xl leading-none md:text-4xl">
-                {s.percent}
-              </p>
-              <p className="mt-1 text-xs text-white/65 md:text-sm">
-                {s.copy}
-              </p>
-            </div>
-          </article>
-        ))}
+                <p className="font-[family-name:var(--font-instrument-serif)] text-3xl leading-none md:text-4xl">
+                  {s.percent}
+                </p>
+                <p className="mt-1 text-xs text-white/65 md:text-sm">
+                  {s.copy}
+                </p>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

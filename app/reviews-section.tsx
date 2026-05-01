@@ -62,7 +62,7 @@ export default function ReviewsSection() {
           type="button"
           aria-label="Previous review"
           onClick={prev}
-          className="flex w-10 shrink-0 items-center justify-center rounded-full border border-[#262626]/25 text-xl text-[#262626]/70 transition-colors hover:border-[#262626] hover:bg-[#262626] hover:text-white md:w-14"
+          className="flex w-10 shrink-0 items-center justify-center rounded-full border border-[#262626]/25 text-xl text-[#262626]/70 transition-colors hover:border-[#181818] hover:bg-[#181818] hover:text-white md:w-14"
         >
           <span aria-hidden="true">←</span>
         </button>
@@ -86,7 +86,7 @@ export default function ReviewsSection() {
           type="button"
           aria-label="Next review"
           onClick={next}
-          className="flex w-10 shrink-0 items-center justify-center rounded-full border border-[#262626]/25 text-xl text-[#262626]/70 transition-colors hover:border-[#262626] hover:bg-[#262626] hover:text-white md:w-14"
+          className="flex w-10 shrink-0 items-center justify-center rounded-full border border-[#262626]/25 text-xl text-[#262626]/70 transition-colors hover:border-[#181818] hover:bg-[#181818] hover:text-white md:w-14"
         >
           <span aria-hidden="true">→</span>
         </button>

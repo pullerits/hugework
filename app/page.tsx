@@ -2,6 +2,7 @@ import ProjectsSection from "./projects-section";
 import ReviewsSection from "./reviews-section";
 import RotatingWord from "./rotating-word";
 import ServicesSection from "./services-section";
+import SiteFooter from "./site-footer";
 import StatsSection from "./stats-section";
 
 export default function Home() {
@@ -75,6 +76,8 @@ export default function Home() {
       <ReviewsSection />
 
       <StatsSection />
+
+      <SiteFooter />
     </div>
   );
 }
