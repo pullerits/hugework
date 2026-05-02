@@ -13,30 +13,30 @@ const reviews: Review[] = [
   {
     name: "Amie Schneider",
     role: "Founder / Social Graces",
-    tagline: "Eleven out of ten.",
+    tagline: "Üksteist kümnest.",
     quote:
-      "The HUGEWORK team is hands down an 11 out of 10. Professional, enthusiastic, and very experienced. They started with us over two years ago and completely brought our brand to life. They've not only sharpened our identity but continue to evolve it as trends change. Their consulting and advice have been priceless.",
+      "HUGEWORK tõi meie brändi päriselt ellu. Nad ei teinud ainult ilusat kujundust, vaid aitasid kogu identiteedi, veebikogemuse ja turunduse ühte süsteemi siduda.",
   },
   {
     name: "Marco Vidal",
     role: "CMO / Northwind Studio",
-    tagline: "Sharp, fast, and on-brief.",
+    tagline: "Täpne ja äriliselt selge.",
     quote:
-      "We came in with a vague idea and walked out with a full identity, a site that actually converts, and a team that genuinely cared about the outcome. Worth every penny — twice over.",
+      "Tulime üsna lahtise ideega ja saime lõpuks identiteedi, veebilehe ning kampaaniasuuna, mis sobis meie müügiprotsessiga. Väga tugev strateegiline partner.",
   },
   {
     name: "Priya Anand",
     role: "Founder / Lumen Coffee",
-    tagline: "Every detail, sweated.",
+    tagline: "Iga detail oli läbi mõeldud.",
     quote:
-      "From packaging to the print campaign, every detail was sweated. Our customers literally photograph the cups. That's the kind of work that pays for itself, and then some.",
+      "Pakenditest trükimaterjalideni oli kõik järjepidev. Kliendid pildistavad meie tooteid, sest bränd mõjub lõpuks nii digis kui päriselus ühtsena.",
   },
   {
     name: "Daniel Stokes",
     role: "Director / Field & Co.",
-    tagline: "Zero ego. All output.",
+    tagline: "Aus nõu ja tugev teostus.",
     quote:
-      "Fast, sharp, and zero ego. They listened, pushed back when it mattered, and delivered work that made our investors sit up in their chairs. We'll be back for round two.",
+      "Nad kuulasid, küsisid ebamugavaid küsimusi ja viisid lõpuks idee täpselt sellisele tasemele, mida investoritele ja klientidele näidata tahtsime.",
   },
 ];
 
@@ -50,17 +50,17 @@ export default function ReviewsSection() {
 
   return (
     <section
-      className="bg-[#f7f5f0] px-4 py-20 text-[#262626] md:py-28"
-      aria-label="Client reviews"
+      className="bg-[#f7f5f0] px-4 py-20 text-[#262626] md:px-8 md:py-28 lg:px-16 xl:px-24"
+      aria-label="Klientide tagasiside"
     >
       <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-light leading-[1.05] tracking-tight">
-        What our clients are saying
+        Mida kliendid ütlevad
       </h2>
 
       <div className="-mx-2 mt-12 flex items-stretch gap-2 md:mx-0 md:gap-4">
         <button
           type="button"
-          aria-label="Previous review"
+          aria-label="Eelmine tagasiside"
           onClick={prev}
           className="flex w-10 shrink-0 items-center justify-center rounded-full border border-[#262626]/25 text-xl text-[#262626]/70 transition-colors hover:border-[#181818] hover:bg-[#181818] hover:text-white md:w-14"
         >
@@ -84,14 +84,13 @@ export default function ReviewsSection() {
 
         <button
           type="button"
-          aria-label="Next review"
+          aria-label="Järgmine tagasiside"
           onClick={next}
           className="flex w-10 shrink-0 items-center justify-center rounded-full border border-[#262626]/25 text-xl text-[#262626]/70 transition-colors hover:border-[#181818] hover:bg-[#181818] hover:text-white md:w-14"
         >
           <span aria-hidden="true">→</span>
         </button>
       </div>
-
     </section>
   );
 }

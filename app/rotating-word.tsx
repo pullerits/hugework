@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const words = ["Design", "Build", "Print"];
+const words = ["Disain", "Veeb", "Turundus", "Trükk"];
 const typeDelay = 190;
 const deleteDelay = 115;
 const holdDelay = 2200;
@@ -49,7 +49,10 @@ export default function RotatingWord() {
   }, [isDeleting, text, wordIndex]);
 
   return (
-    <span aria-label="Design, Build, Print" className="inline-block min-w-[6ch]">
+    <span
+      aria-label="Disain, veeb, turundus ja trükk"
+      className="inline-block min-w-[8ch]"
+    >
       <span aria-hidden="true">{text}</span>
       <span
         aria-hidden="true"

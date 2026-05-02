@@ -1,4 +1,4 @@
-const footerLinks = ["Instagram", "LinkedIn", "Newsletter"];
+const footerLinks = ["Instagram", "LinkedIn", "Facebook"];
 
 const offices = [
   {
@@ -6,8 +6,8 @@ const offices = [
     address: "Rotermanni 8, 10111 Tallinn",
   },
   {
-    city: "Helsinki",
-    address: "Mannerheimintie 12, 00100 Helsinki",
+    city: "Eesti",
+    address: "Paigaldus ja tootmine üle Eesti",
   },
 ];
 
@@ -26,18 +26,18 @@ export default function SiteFooter() {
   return (
     <footer
       id="contact"
-      className="relative flex min-h-screen flex-col overflow-hidden bg-[#f7f5f0] px-4 pt-20 text-[#050505] md:pt-24"
-      aria-label="Contact"
+      className="relative flex min-h-screen flex-col overflow-hidden bg-[#f7f5f0] pt-20 text-[#050505] md:pt-24"
+      aria-label="Kontakt"
     >
-      <div className="grid flex-1 grid-cols-1 gap-12 md:grid-cols-[1.1fr_0.9fr_1fr] md:gap-16">
+      <div className="grid flex-1 grid-cols-1 gap-12 px-4 md:grid-cols-[1.1fr_0.9fr_1fr] md:gap-16 md:px-8">
         <div className="flex flex-col justify-between gap-16">
           <div>
             <p className="max-w-[9ch] text-[clamp(3.75rem,8vw,7rem)] font-black uppercase leading-[0.82] tracking-tight">
-              Let&apos;s make huge work
+              Teeme suure töö ära
             </p>
           </div>
           <p className="text-xs uppercase tracking-normal">
-            © All right reserved. 2026 Hugework
+            © Kõik õigused kaitstud. 2026 Hugework
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export default function SiteFooter() {
             </a>
           </div>
 
-          <nav aria-label="Social links">
+          <nav aria-label="Sotsiaalmeedia lingid">
             {footerLinks.map((link) => (
               <a key={link} className="block hover:opacity-55" href="#">
                 {link}
@@ -77,7 +77,7 @@ export default function SiteFooter() {
       </div>
 
       <div
-        className="pointer-events-none relative -mx-4 mt-2 h-[clamp(18rem,30vw,34rem)] shrink-0 select-none overflow-hidden"
+        className="pointer-events-none relative mt-2 h-[clamp(18rem,30vw,34rem)] shrink-0 select-none overflow-hidden"
         aria-hidden="true"
       >
         <div className="absolute inset-x-0 bottom-[-0.18em] flex items-end justify-center px-[1vw] font-[family-name:var(--font-instrument-serif)] text-[clamp(8.5rem,27vw,31rem)] font-normal lowercase leading-[0.72] tracking-normal">

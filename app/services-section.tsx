@@ -13,50 +13,63 @@ type Service = {
 const services: Service[] = [
   {
     numeral: "01",
-    category: "DESIGN",
-    headline: "Bold ideas, beautifully made.",
+    category: "BRÄNDING",
+    headline: "Identiteet, mis ei kao mürasse.",
     description:
-      "Identities and design systems that refuse to whisper — sharp strategy, smart layouts, and the kind of detail that makes people stop scrolling.",
+      "Loome visuaalseid identiteete, CVI-süsteeme, illustratsioone ja kampaaniamaterjale, mis annavad brändile selge hääle ning aitavad turul eristuda.",
     tags: [
-      "BRANDING",
-      "VISUAL IDENTITY",
+      "LOGOD",
+      "CVI",
+      "VISUAALNE IDENTITEET",
+      "ILLUSTRATSIOON",
+      "PAKENDID",
       "ART DIRECTION",
-      "ILLUSTRATION",
-      "MOTION",
-      "PACKAGING",
-      "EDITORIAL",
     ],
   },
   {
     numeral: "02",
-    category: "BUILD",
-    headline: "Sites that load fast and hit harder.",
+    category: "VEEB",
+    headline: "Kiired veebid, mis töötavad müügikanalina.",
     description:
-      "From landing pages to full platforms, we ship modern web experiences that look sharp, feel snappy, and actually move the numbers.",
+      "Disainime ja arendame maandumislehti, kodulehti, e-poode ja sisuhalduslahendusi, mille fookus on kasutajakogemusel, kiirusel ja mõõdetaval tulemusel.",
     tags: [
-      "WEB DESIGN",
-      "DEVELOPMENT",
+      "VEEBIDISAIN",
+      "ARENDUS",
       "UX / UI",
-      "E-COMMERCE",
+      "E-KAUBANDUS",
       "CMS",
-      "PERFORMANCE",
+      "KIIRUS",
       "SEO",
     ],
   },
   {
     numeral: "03",
-    category: "PRINT",
-    headline: "Ink that earns its weight.",
+    category: "TURUNDUS",
+    headline: "Strateegia, mis viib brändi õigete inimesteni.",
     description:
-      "Posters, packaging, business cards, books — printed work made with the right paper, the right finishes, and a healthy obsession with the details.",
+      "Planeerime digiturundust, SEO-d, kampaaniaid ja sisu nii, et iga kanal toetaks ühtset brändi ning iga eelarve-euro oleks põhjendatud.",
     tags: [
-      "POSTERS",
-      "PACKAGING",
-      "BUSINESS CARDS",
-      "BOOKS",
-      "BROCHURES",
-      "SIGNAGE",
-      "LARGE FORMAT",
+      "STRATEEGIA",
+      "SEO",
+      "GOOGLE ADS",
+      "SOTSIAALMEEDIA",
+      "COPYWRITING",
+      "ANALÜÜTIKA",
+    ],
+  },
+  {
+    numeral: "04",
+    category: "TRÜKK",
+    headline: "Füüsiline teostus, mis kannab brändi päris maailmas.",
+    description:
+      "Toodame trükiseid, erilahendusi, sõidukigraafikat, riidebrändingut, kleebiseid ja ruumigraafikat koos täpse paigaldusega üle Eesti.",
+    tags: [
+      "DIGITRÜKK",
+      "SUURFORMAAT",
+      "KLEEBISED",
+      "SÕIDUKID",
+      "RIIETUS",
+      "PAIGALDUS",
     ],
   },
 ];
@@ -98,11 +111,10 @@ export default function ServicesSection() {
       ref={containerRef}
       className="relative bg-[#f7f5f0] text-[#262626]"
       style={{ height: `${services.length * 100}vh` }}
-      aria-label="Services"
+      aria-label="Teenused"
     >
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden px-4 py-10">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden px-4 py-10 md:px-8 lg:px-16 xl:px-24">
         <div className="grid w-full grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
-          {/* Left: rotating numeral */}
           <div className="relative hidden h-[55vh] md:block">
             {services.map((s, i) => (
               <span
@@ -121,15 +133,14 @@ export default function ServicesSection() {
             ))}
           </div>
 
-          {/* Right: heading + swappable card */}
           <div className="flex flex-col">
             <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-light leading-[1.05] tracking-tight">
-              We think big.
+              Mõtleme tervikuna.
               <br />
-              Then make it real.
+              Teostame lõpuni.
             </h2>
 
-            <div className="relative mt-10 min-h-[340px] md:mt-14 md:min-h-[300px]">
+            <div className="relative mt-10 min-h-[380px] md:mt-14 md:min-h-[320px]">
               {services.map((s, i) => (
                 <article
                   key={s.category}
@@ -165,12 +176,11 @@ export default function ServicesSection() {
               ))}
             </div>
 
-            {/* Dot indicators */}
             <div className="mt-10 flex items-center gap-2">
               {services.map((s, i) => (
                 <span
                   key={s.numeral}
-                  aria-label={`${s.category} ${i === active ? "(current)" : ""}`}
+                  aria-label={`${s.category} ${i === active ? "(aktiivne)" : ""}`}
                   className={`h-2.5 rounded-full bg-[#262626] transition-all duration-500 ease-out ${
                     i === active ? "w-9 opacity-100" : "w-2.5 opacity-25"
                   }`}

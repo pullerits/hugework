@@ -1,27 +1,17 @@
+import Link from "next/link";
 import ProjectsSection from "./projects-section";
 import ReviewsSection from "./reviews-section";
 import RotatingWord from "./rotating-word";
 import ServicesSection from "./services-section";
 import SiteFooter from "./site-footer";
+import SiteNav from "./site-nav";
 import StatsSection from "./stats-section";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-[#f7f5f0] text-[#262626] font-sans">
-      {/* Navigation */}
-      <nav className="flex items-center justify-between border-b border-[#262626]/10 px-4 py-1">
-        <span className="text-lg font-semibold tracking-widest uppercase font-[family-name:var(--font-libre-baskerville)]">
-          HUGEWORK
-        </span>
-        <a
-          href="#contact"
-          className="text-sm font-medium text-[#262626]/60 transition-colors hover:text-[#262626]"
-        >
-          Contact
-        </a>
-      </nav>
+      <SiteNav />
 
-      {/* Hero Video */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#262626]/5 sm:aspect-[16/9] md:aspect-[16/5]">
         <video
           autoPlay
@@ -34,30 +24,46 @@ export default function Home() {
         </video>
       </div>
 
-      <section className="px-4 pt-16 pb-10 md:pt-12 md:pb-8">
+      <section className="px-4 pt-16 pb-10 md:px-8 md:pt-12 md:pb-8 lg:px-16 xl:px-24">
         <h1 className="font-[family-name:var(--font-instrument-serif)] text-[clamp(5.5rem,24vw,11rem)] font-normal leading-none tracking-normal">
           <RotatingWord />
         </h1>
       </section>
 
-      {/* Welcome section */}
-      <section className="grid grid-cols-1 items-center gap-10 px-4 py-20 md:grid-cols-[1fr_auto] md:gap-16 md:py-28">
-        <div className="max-w-xl">
+      <section className="grid grid-cols-1 items-center gap-10 px-4 py-20 md:grid-cols-[1fr_auto] md:gap-16 md:px-8 md:py-28 lg:px-16 xl:px-24">
+        <div className="max-w-2xl">
           <h2 className="text-[clamp(2.25rem,5vw,3.75rem)] font-light leading-[1.05] tracking-tight text-[#262626]">
-            Welcome to
+            Visuaalne intelligentsus.
             <br />
-            the HUGEWORK house.
+            Strateegiline elluviimine.
           </h2>
 
           <div className="mt-8 space-y-5 text-base leading-relaxed text-[#262626]/85 md:text-lg">
             <p>
-              We&apos;re your creative partner for bold moves and big
-              ideas, across design, web, and print.
+              Oleme loovagentuur, mis seob maailmatasemel disaini,
+              tehnoloogia, turunduse ja füüsilise teostuse üheks terviklikuks
+              brändikogemuseks.
             </p>
             <p>
-              From startups to standouts, we craft work that connects,
-              sparks emotion, and actually makes things happen.
+              Alates esimesest brändistrateegiast ja veebiplatvormist kuni
+              viimase paigaldatud detailini juhime protsessi nii, et idee ei
+              jääks ainult ilusaks kavandiks, vaid hakkaks äri kasvatama.
             </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="rounded-full bg-[#181818] px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-opacity hover:opacity-80"
+            >
+              Alusta projektiga
+            </Link>
+            <Link
+              href="/works"
+              className="rounded-full border border-[#262626]/25 px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] transition-colors hover:border-[#181818] hover:bg-[#181818] hover:text-white"
+            >
+              Vaata töid
+            </Link>
           </div>
         </div>
 

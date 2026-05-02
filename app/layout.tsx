@@ -30,8 +30,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "HUGEWORK — Design, Web Development & Printing",
-  description: "HUGEWORK is a creative agency specializing in design, web development, and printing services.",
+  title: "HUGEWORK - Loovagentuur, veebilahendused ja trükk",
+  description:
+    "HUGEWORK ühendab strateegilise disaini, veebiarenduse, digiturunduse, trüki ja paigalduse üheks terviklikuks partnerluseks.",
 };
 
 export default function RootLayout({
@@ -41,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="et"
       className={`${geistSans.variable} ${geistMono.variable} ${libreBaskerville.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

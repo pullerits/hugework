@@ -20,7 +20,7 @@ type Project = {
 const projects: Project[] = [
   {
     name: "Altar",
-    tags: ["BRANDING", "ILLUSTRATION", "STRATEGY", "VISUAL IDENTITY"],
+    tags: ["BRÄNDING", "ILLUSTRATSIOON", "STRATEEGIA", "CVI"],
     bg: "radial-gradient(120% 80% at 30% 30%, #c46b3a 0%, #7a3320 55%, #2d1410 100%)",
     logo: "Altar.",
     logoClass:
@@ -29,7 +29,7 @@ const projects: Project[] = [
   },
   {
     name: "Farm Rio",
-    tags: ["BRANDING", "WEB", "MOTION", "CAMPAIGN"],
+    tags: ["BRÄNDING", "VEEB", "MOTION", "KAMPAANIA"],
     bg: "linear-gradient(115deg, #f0a5d3 0%, #b06bd6 45%, #4f3aa1 100%)",
     logo: "FARM RIO",
     logoClass: "text-white tracking-tight",
@@ -37,7 +37,7 @@ const projects: Project[] = [
   },
   {
     name: "Rivers",
-    tags: ["IDENTITY", "PRINT", "EDITORIAL"],
+    tags: ["IDENTITEET", "TRÜKK", "EDITORIAL"],
     bg: "linear-gradient(180deg, #f1ece1 0%, #d8cfbb 100%)",
     logo: "R",
     logoClass:
@@ -46,15 +46,15 @@ const projects: Project[] = [
   },
   {
     name: "Moon Lab",
-    tags: ["WEB", "DEVELOPMENT", "UX/UI"],
+    tags: ["VEEB", "ARENDUS", "UX/UI"],
     bg: "radial-gradient(80% 80% at 70% 30%, #2d3358 0%, #0d1024 70%)",
-    logo: "◐ moon lab",
+    logo: "● moon lab",
     logoClass: "text-white tracking-[0.15em]",
     logoStyle: { fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 300 },
   },
   {
     name: "Pulse",
-    tags: ["CAMPAIGN", "MOTION", "ART DIRECTION"],
+    tags: ["KAMPAANIA", "MOTION", "ART DIRECTION"],
     bg: "linear-gradient(135deg, #ff5e3a 0%, #d61a76 60%, #5b1166 100%)",
     logo: "PULSE/",
     logoClass: "text-white tracking-tight",
@@ -62,14 +62,13 @@ const projects: Project[] = [
   },
   {
     name: "Loop",
-    tags: ["PACKAGING", "PRINT", "BRANDING"],
+    tags: ["PAKEND", "TRÜKK", "BRÄNDING"],
     bg: "linear-gradient(160deg, #b9d4a3 0%, #5d8466 60%, #1f3a2a 100%)",
     logo: "loop",
     logoClass: "text-white",
     logoStyle: {
       fontSize: "clamp(3rem, 7vw, 5.5rem)",
       fontWeight: 300,
-      letterSpacing: "-0.04em",
     },
   },
 ];
@@ -115,7 +114,6 @@ export default function ProjectsSection() {
   };
 
   const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
-    // Leave touch alone — native horizontal scroll already feels right
     if (e.pointerType === "touch") return;
     const node = trackRef.current;
     if (!node) return;
@@ -147,17 +145,12 @@ export default function ProjectsSection() {
     }
     const wasMoved = drag.current.moved;
     drag.current.active = false;
-    // Magnet to the nearest card after the drag ends
     if (wasMoved) settleToNearest();
-    // Clear "moved" on next tick so the swallowing click handler still sees it
     window.setTimeout(() => {
       drag.current.moved = false;
     }, 0);
   };
 
-  // One wheel notch advances exactly one card. A short cooldown prevents a
-  // rapid scroll from blowing through the whole row at once. Edge wheels pass
-  // through so the page keeps scrolling vertically.
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
       const node = trackRef.current;
@@ -165,7 +158,6 @@ export default function ProjectsSection() {
       const target = e.target as Node | null;
       if (!target || !node.contains(target)) return;
 
-      // Trackpad horizontal swipe — let the carousel scroll natively
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
 
       const delta = e.deltaY;
@@ -178,7 +170,6 @@ export default function ProjectsSection() {
         (direction < 0 && current <= 0) ||
         (direction > 0 && current >= lastIdx)
       ) {
-        // At the edge in the wheel's direction — let the page scroll
         return;
       }
 
@@ -194,7 +185,6 @@ export default function ProjectsSection() {
     return () => window.removeEventListener("wheel", onWheel);
   }, []);
 
-  // Track active card from scroll position
   useEffect(() => {
     const node = trackRef.current;
     if (!node) return;
@@ -206,8 +196,6 @@ export default function ProjectsSection() {
       const idx = Math.round(node.scrollLeft / (cardW + gap));
       const clamped = Math.min(projects.length - 1, Math.max(0, idx));
       setActive(clamped);
-      // Keep the wheel's notion of "current card" in sync with reality, but
-      // not during a wheel-driven smooth animation (it would clobber itself).
       if (performance.now() >= wheelLockUntil.current) {
         targetIdx.current = clamped;
       }
@@ -220,14 +208,14 @@ export default function ProjectsSection() {
   return (
     <section
       className="bg-[#f7f5f0] py-20 text-[#262626] md:py-28"
-      aria-label="Selected work"
+      aria-label="Valitud tööd"
     >
-      <div className="flex items-end justify-between gap-6 px-4">
+      <div className="flex items-end justify-between gap-6 px-4 md:px-8 lg:px-16 xl:px-24">
         <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-light leading-[1.05] tracking-tight">
-          Our greatest hits.
+          Valitud tööd.
         </h2>
         <p className="hidden text-sm text-[#262626]/60 md:block">
-          Drag, scroll, or swipe →
+          Lohista, keri või libista →
         </p>
       </div>
 
@@ -243,7 +231,7 @@ export default function ProjectsSection() {
             e.stopPropagation();
           }
         }}
-        className="mt-10 flex cursor-grab gap-4 overflow-x-auto overscroll-x-contain px-4 pb-4 select-none active:cursor-grabbing [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="mt-10 flex cursor-grab gap-4 overflow-x-auto overscroll-x-contain px-4 pb-4 select-none active:cursor-grabbing md:px-8 lg:px-16 xl:px-24 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {projects.map((p) => (
           <article
@@ -273,7 +261,7 @@ export default function ProjectsSection() {
         ))}
       </div>
 
-      <div className="mt-4 flex items-center gap-2 px-4">
+      <div className="mt-4 flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-24">
         {projects.map((p, i) => (
           <span
             key={p.name}

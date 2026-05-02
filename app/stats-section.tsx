@@ -12,22 +12,22 @@ const stats: Stat[] = [
   {
     illustration: <CardsIllustration />,
     percent: "70%",
-    copy: "of businesses lose money on bad UX. Let that sink in.",
+    copy: "ettevõtetest kaotab kehva kasutajakogemuse tõttu müügivõimalusi.",
   },
   {
     illustration: <ScaleIllustration />,
     percent: "94%",
-    copy: "of first impressions come down to design. No do-overs.",
+    copy: "esmamuljest kujuneb disaini põhjal. Teist esimest korda ei tule.",
   },
   {
     illustration: <DaisyIllustration />,
     percent: "86%",
-    copy: "of buyers pay more for a brand they actually feel something for.",
+    copy: "ostjatest maksab rohkem brändi eest, millega tekib päris side.",
   },
   {
     illustration: <PencilIllustration />,
     percent: "75%",
-    copy: "of users judge a company's credibility on design alone. Yes, really.",
+    copy: "kasutajatest hindab ettevõtte usaldusväärsust disaini järgi.",
   },
 ];
 
@@ -36,12 +36,12 @@ export default function StatsSection() {
 
   return (
     <section
-      className="bg-[#f7f5f0] px-4 py-14 text-[#262626] md:py-20"
+      className="bg-[#f7f5f0] px-4 py-14 text-[#262626] md:px-8 md:py-20 lg:px-16 xl:px-24"
       aria-label="Why design matters"
     >
       <div className="mx-auto max-w-5xl">
         <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-light leading-[1.05] tracking-tight">
-          The numbers don&apos;t lie.
+          Numbrid ei valeta.
         </h2>
       </div>
 
