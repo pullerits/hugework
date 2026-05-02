@@ -33,7 +33,7 @@ export default function SiteFooter() {
         <div className="flex flex-col justify-between gap-16">
           <div>
             <p className="max-w-[9ch] text-[clamp(3.75rem,8vw,7rem)] font-black uppercase leading-[0.82] tracking-tight">
-              Join the culture crafters
+              Let&apos;s make huge work
             </p>
           </div>
           <p className="text-xs uppercase tracking-normal">

@@ -51,11 +51,29 @@ export default function StatsSection() {
           return (
             <article
               key={s.percent}
+              tabIndex={0}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered((h) => (h === i ? null : h))}
-              className="relative flex aspect-square flex-col overflow-hidden rounded-2xl bg-[#0f0f0f] p-2 text-white md:aspect-[5/4]"
+              onFocus={() => setHovered(i)}
+              onBlur={() => setHovered((h) => (h === i ? null : h))}
+              className="group relative aspect-square overflow-hidden rounded-2xl bg-[#0f0f0f] p-2 text-white outline-none focus-visible:ring-2 focus-visible:ring-[#262626]/40 md:aspect-[5/4]"
             >
-              <div className="relative flex flex-1 items-center justify-center overflow-hidden rounded-xl bg-[#181818] px-6 pt-10 pb-4">
+              <div className="absolute inset-x-0 bottom-0 px-6 pt-4 pb-5 text-center">
+                <p className="font-[family-name:var(--font-instrument-serif)] text-3xl leading-none md:text-4xl">
+                  {s.percent}
+                </p>
+                <p className="mx-auto mt-1 max-w-sm text-xs text-white/65 md:text-sm">
+                  {s.copy}
+                </p>
+              </div>
+
+              <div
+                className={`absolute top-2 right-2 left-2 z-10 flex items-center justify-center overflow-hidden rounded-xl bg-[#181818] px-6 transition-[bottom] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  revealed
+                    ? "bottom-[6.75rem] md:bottom-[7.25rem]"
+                    : "bottom-2"
+                }`}
+              >
                 <span
                   aria-hidden="true"
                   className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center text-white/70"
@@ -69,19 +87,6 @@ export default function StatsSection() {
                 </span>
 
                 {s.illustration}
-              </div>
-
-              <div
-                className={`px-6 py-3 text-center transition-opacity duration-500 ease-out max-md:opacity-100 ${
-                  revealed ? "md:opacity-100" : "md:opacity-0"
-                }`}
-              >
-                <p className="font-[family-name:var(--font-instrument-serif)] text-3xl leading-none md:text-4xl">
-                  {s.percent}
-                </p>
-                <p className="mt-1 text-xs text-white/65 md:text-sm">
-                  {s.copy}
-                </p>
               </div>
             </article>
           );
